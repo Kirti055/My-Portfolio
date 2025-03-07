@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dbd2ab;
+}
+
+.list-container {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:  #3C2218;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.list li {
+    float: left;
+}
+  
+.list li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+.list li a:hover {
+    background-color: #111;
+}
+
+.title {
+    margin: 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Certificates Grid */
+.certificates-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Google Drive Style Preview Cards */
+.certificate-card {
+    flex: 1 1 calc(25% - 20px);
+    max-width: 220px;
+    height: 280px;
+    background: #A67B5B;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificate-card:hover {
+    transform: scale(1.05);
+}
+
+/* PDF Preview */
+.certificate-card embed {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+    .certificate-card {
+        flex: 1 1 calc(33.33% - 20px); /* 3 per row for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .certificate-card {
+        flex: 1 1 calc(50% - 20px); /* 2 per row for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-card {
+        flex: 1 1 100%; /* 1 per row for mobile */
+    }
+}
+
+/* Download Button */
+.download-btn {
+    background: #3C2218;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #5A3825;
+}
+
+/* Large PDF Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make modal larger */
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Increased width */
+    max-width: 1200px; /* Set a maximum width */
+    height: 90vh; /* Increased height */
+    max-height: 90vh; /* Ensure it fits within screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Make sure certificates fit properly */
+.modal-preview {
+    width: 100%;
+    height: 100%;
+    max-width: 1100px;
+    max-height: 85vh;
+    object-fit: contain; /* Ensures proper scaling */
+}
+
+.modal-pdf {
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}

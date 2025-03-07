@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Certificates</title>
+        <link rel="stylesheet" href="certificates.css">
+    </head>
+    <body>
+        <div class="list-container">
+            <ul class="list">
+                <li><a href="portfolio.html">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+
+    <h1 class="title">My Certificates</h1>
+
+    <div class="certificates-container">
+        <div class="certificate-card" onclick="openModal('Certificates/KIRTI-ADHIKARI-Participant-Certificate C.pdf')">
+            <embed src="Certificates/KIRTI-ADHIKARI-Participant-Certificate C.pdf#toolbar=0" type="application/pdf">
+            <p>Certificate 1</p>
+            <button class="download-btn" onclick="downloadCertificate(event, 'Certificates/KIRTI-ADHIKARI-Participant-Certificate C.pdf')">Download</button>
+        </div>
+
+        <div class="certificate-card" onclick="openModal('Certificates/KIRTI-ADHIKARI-Participant-Certificate C++.pdf')">
+            <embed src="Certificates/KIRTI-ADHIKARI-Participant-Certificate C++.pdf#toolbar=0" type="application/pdf">
+            <p>Certificate 2</p>
+            <button class="download-btn" onclick="downloadCertificate(event, 'Certificates/KIRTI-ADHIKARI-Participant-Certificate C++.pdf')">Download</button>
+        </div>
+
+        <div class="certificate-card" onclick="openModal('Certificates/KIRTI-ADHIKARI-Participant-Certificate Python.pdf')">
+            <embed src="Certificates/KIRTI-ADHIKARI-Participant-Certificate Python.pdf#toolbar=0" type="application/pdf">
+            <p>Certificate 3</p>
+            <button class="download-btn" onclick="downloadCertificate(event, 'Certificates/KIRTI-ADHIKARI-Participant-Certificate Python.pdf')">Download</button>
+        </div>
+
+        <div class="certificate-card" onclick="openModal('Certificates/Kirti Adhikari.pdf')">
+            <embed src="Certificates/Kirti Adhikari.pdf#toolbar=0" type="application/pdf">
+            <p>Certificate 4</p>
+            <button class="download-btn" onclick="downloadCertificate(event, 'Certificates/Kirti Adhikari.pdf')">Download</button>
+        </div>
+
+        <div class="certificate-card" onclick="openModal('Certificates/generate.jpeg')">
+            <embed src="Certificates/generate.jpeg#toolbar=0" type="application/pdf">
+            <p>Certificate 5</p>
+            <button class="download-btn" onclick="downloadCertificate(event, 'Certificates/generate.jpeg')">Download</button>
+        </div>
+
+        <div class="certificate-card" onclick="openModal('Certificates/Tricycle_Kirti Adhikari.png')">
+            <embed src="Certificates/Tricycle_Kirti Adhikari.png#toolbar=0" type="application/pdf">
+            <p>Certificate 6</p>
+            <button class="download-btn" onclick="downloadCertificate(event, 'Certificates/Tricycle_Kirti Adhikari.png')">Download</button>
+        </div>
+    </div>
+
+    <!-- Large Modal for Full Preview -->
+<div id="certificateModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" id="modalContent">
+        <span class="close" onclick="closeModal()">&times;</span>
+    </div>
+</div>
+
+
+    <script src="certificates.js"></script>
+
+</body>
+</html>

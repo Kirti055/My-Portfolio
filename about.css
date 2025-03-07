@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    background-color: #4E342E; /* Brown Theme */
+    color: #8A6A4F;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://img.freepik.com/free-vector/brown-pastel-abstract-wavey-background-with-leaves_78370-636.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* This makes it stay in place while scrolling */
+    min-height: 100vh; /* Ensures the content can extend beyond one screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #FFF3E0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD180;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 50px;
+    margin-top: 70px;
+    max-width: 900px;
+    background: rgba(255, 243, 224, 0.9);
+    border-radius: 15px;
+}
+
+.image-container img {
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline Section */
+.timeline {
+    width: 80%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-item {
+    background: #6D4C41;
+    padding: 15px;
+    margin: 10px 0;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hobbies Section */
+.hobbies {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.hobbies ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hobbies li {
+    background: rgba(255, 243, 224, 0.9);
+    color: #4E342E;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+/* Social Media Links */
+.socials {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.social-btn {
+    display: inline-block;
+    background: #FFD180;
+    color: #4E342E;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: #FFAB40;
+}
