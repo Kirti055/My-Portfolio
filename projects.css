@@ -1,7 +1,10 @@
 body {
+    background: url('proj.webp') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #dbd2ab;
+    overflow-x: hidden;
 }
 
 .list-container {
@@ -33,21 +36,18 @@ body {
     background-color: #111;
 }
 
-.nav {
-    position: relative;
-    top: 50%;
-    left: 18%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-}
-
 .container {
     padding: 20px;
     text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+h1 {
+    font-size: 2.5em;
+    animation: fadeInDown 1.2s ease-in-out;
+}
+
+/* Project Grid Animations */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -58,16 +58,20 @@ body {
 .project-card {
     background-color: #5C3B2E;
     color: white;
-            padding: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
 }
 
 .project-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
+/* Modal Animation */
 .modal {
     display: none;
     position: fixed;
@@ -78,18 +82,65 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .modal-content {
-    background:  #A1887F;
+    background: #A1887F;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     max-width: 500px;
+    transform: scale(0.7);
+    animation: zoomIn 0.5s ease-in-out forwards;
 }
 
 .close {
     float: right;
     font-size: 20px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close:hover {
+    transform: scale(1.2);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

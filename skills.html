@@ -1,47 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Skills</title>
-        <link rel="stylesheet" href="skills.css">
-    </head>
-    <body>
-        <div class="list-container">
-            <ul class="list">
-                <li><a href="portfolio.html">Home</a></li>
-                <li><a href="about.html">About me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="certificates.html">Certificates</a></li>
-            </ul>
-        </div>
-        <div class="container">
-            <h1>My Skills & Expertise</h1>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>HTML</h3>
-                    <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="skills.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+
+    <!-- React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div class="list-container">
+        <ul class="list">
+            <li><a href="portfolio.html">Home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+        </ul>
+    </div>
+
+    <div id="skills-root"></div>  <!-- React will render here -->
+
+    <script type="text/babel">
+        function Skills() {
+            const skills = [
+                { name: "HTML", icon: "fa-html5", level: "90%" },
+                { name: "CSS", icon: "fa-css3-alt", level: "85%" },
+                { name: "JavaScript", icon: "fa-js", level: "65%" },
+                { name: "React", icon: "fa-react", level: "30%" },
+                { name: "Python", icon: "fa-python", level: "70%" },
+                { name: "C", icon: "fa-cuttlefish", level: "75%" },
+                { name: "C++", icon: "devicon-cplusplus-plain", level: "50%" },
+                { name: "Java", icon: "fa-java", level: "70%" }
+            ];
+
+            const softSkills = ["Communication", "Teamwork", "Problem-Solving", "Adaptability", "Time Management"];
+
+            React.useEffect(() => {
+                document.querySelectorAll(".progress").forEach(bar => {
+                    bar.style.width = bar.dataset.width;
+                });
+            }, []);
+
+            return (
+                <div className="container">
+                    <h1>My Skills & Expertise</h1>
+                    <div className="skills-grid">
+                        {skills.map((skill, index) => (
+                            <div className="skill-card" key={index}>
+                                <h3><i className={`fa-brands ${skill.icon}`}></i> {skill.name}</h3>
+                                <div className="progress-bar">
+                                    <div className="progress" data-width={skill.level}></div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <h2>Soft Skills</h2>
+                    <div className="soft-skills">
+                        {softSkills.map((skill, index) => (
+                            <div className="skill-card" key={index} style={{ marginBottom: "15px" }}>
+                                <h3>{skill}</h3>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h3>CSS</h3>
-                    <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
-                </div>
-                <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
-                </div>
-                <div class="skill-card">
-                    <h3>React</h3>
-                    <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
-                </div>
-            </div>
-            <h2>Soft Skills</h2>
-            <div class="soft-skills">
-                <div class="skill-card"><h3>Communication</h3></div><br>
-                <div class="skill-card"><h3>Teamwork</h3></div><br>
-                <div class="skill-card"><h3>Problem-Solving</h3></div><br>
-                <div class="skill-card"><h3>Adaptability</h3></div><br>
-                <div class="skill-card"><h3>Time Management</h3></div><br>
-            </div>
-        </div>
-        <script src="skills.js"></script>
-    </body> 
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("skills-root")).render(<Skills />);
+    </script>
+</body>
 </html>
