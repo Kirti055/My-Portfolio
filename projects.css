@@ -47,7 +47,6 @@ h1 {
     animation: fadeInDown 1.2s ease-in-out;
 }
 
-/* Project Grid Animations */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -71,7 +70,6 @@ h1 {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Modal Animation */
 .modal {
     display: none;
     position: fixed;
@@ -106,7 +104,6 @@ h1 {
     transform: scale(1.2);
 }
 
-/* Keyframe Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }

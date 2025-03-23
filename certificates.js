@@ -1,14 +1,11 @@
-// Ensure modal is hidden on page load
 window.onload = function () {
     document.getElementById("certificateModal").style.display = "none";
 };
 
-// Open Modal with Certificate Preview (PDF or Image)
 function openModal(certSrc) {
     const modal = document.getElementById("certificateModal");
     const modalContent = document.getElementById("modalContent");
 
-    // Check if it's a PDF or an image
     if (certSrc.endsWith(".pdf")) {
         modalContent.innerHTML = `<embed src="${certSrc}" type="application/pdf" class="modal-preview">`;
     } else {
@@ -16,14 +13,31 @@ function openModal(certSrc) {
     }
 
     modal.style.display = "flex";
+    modal.classList.add("fade-in"); 
 }
 
-// Close Modal
 function closeModal() {
-    document.getElementById("certificateModal").style.display = "none";
+    const modal = document.getElementById("certificateModal");
+    modal.classList.add("fade-out"); 
+
+    setTimeout(() => {
+        modal.style.display = "none";
+        modal.classList.remove("fade-out");
+    }, 300); 
 }
 
-// Prevent Click from Closing Modal
 document.getElementById("modalContent").addEventListener("click", function (event) {
     event.stopPropagation();
 });
+
+
+function downloadCertificate(event, certSrc) {
+    event.stopPropagation(); 
+
+    const link = document.createElement("a");
+    link.href = certSrc;
+    link.download = certSrc.split('/').pop(); 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}

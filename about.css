@@ -1,6 +1,5 @@
-/* General Styling */
 body {
-    background-color: #4E342E; /* Brown Theme */
+    background-color: #4E342E; 
     color: #8A6A4F;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,15 +8,13 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* This makes it stay in place while scrolling */
-    min-height: 100vh; /* Ensures the content can extend beyond one screen */
+    background-attachment: fixed;
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
-/* Navigation Bar */
 .navbar {
     width: 100%;
     padding: 15px 20px;
@@ -29,6 +26,7 @@ body {
     left: 0;
     z-index: 1000;
 }
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -49,7 +47,6 @@ body {
     color: #FFD180;
 }
 
-/* About Section */
 .about-section {
     display: flex;
     align-items: center;
@@ -68,7 +65,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Timeline Section */
 .timeline {
     width: 80%;
     text-align: center;
@@ -91,7 +87,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Hobbies Section */
 .hobbies {
     text-align: center;
     margin: 40px 0;
@@ -111,7 +106,6 @@ body {
     border-radius: 8px;
 }
 
-/* Social Media Links */
 .socials {
     text-align: center;
     margin: 40px 0;

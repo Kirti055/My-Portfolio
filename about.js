@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth fade-in effect
     const aboutSection = document.querySelector(".about-section");
     aboutSection.style.opacity = "0";
 
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
         aboutSection.style.opacity = "1";
     }, 500);
 
-    // Add a hover effect to social buttons
     const socialButtons = document.querySelectorAll(".social-btn");
     socialButtons.forEach((btn) => {
         btn.addEventListener("mouseover", () => {

@@ -1,6 +1,4 @@
 body {
-    background: url('cert.webp') no-repeat center center fixed;
-    background-size: cover;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #dbd2ab;
@@ -14,18 +12,16 @@ body {
     height: 100%;
     background: url('cert.webp') no-repeat center center fixed;
     background-size: cover;
-    filter: blur(10px); /* Adjust blur strength */
+    filter: blur(10px); 
     z-index: -1;
 }
 
-/* Ensuring content remains visible */
 .list-container, .certificates-container, .title {
     position: relative;
     z-index: 1;
-    backdrop-filter: blur(0px); /* Keep content clear */
+    backdrop-filter: blur(0px); 
 }
 
-/* Navigation Bar */
 .list-container {
     margin: 0;
     padding: 0;
@@ -62,7 +58,6 @@ body {
     padding: 10px;
 }
 
-/* Certificates Grid */
 .certificates-container {
     display: flex;
     justify-content: center;
@@ -73,7 +68,6 @@ body {
     margin: auto;
 }
 
-/* Google Drive Style Preview Cards */
 .certificate-card {
     flex: 1 1 calc(25% - 20px);
     max-width: 220px;
@@ -94,7 +88,6 @@ body {
     transform: scale(1.05);
 }
 
-/* PDF Preview */
 .certificate-card embed {
     width: 100%;
     height: 200px;
@@ -103,23 +96,22 @@ body {
 
 @media (max-width: 1024px) {
     .certificate-card {
-        flex: 1 1 calc(33.33% - 20px); /* 3 per row for medium screens */
+        flex: 1 1 calc(33.33% - 20px); 
     }
 }
 
 @media (max-width: 768px) {
     .certificate-card {
-        flex: 1 1 calc(50% - 20px); /* 2 per row for smaller screens */
+        flex: 1 1 calc(50% - 20px); 
     }
 }
 
 @media (max-width: 480px) {
     .certificate-card {
-        flex: 1 1 100%; /* 1 per row for mobile */
+        flex: 1 1 100%; 
     }
 }
 
-/* Download Button */
 .download-btn {
     background: #3C2218;
     color: white;
@@ -136,7 +128,6 @@ body {
     background: #5A3825;
 }
 
-/* Large PDF Modal */
 .modal {
     display: none;
     position: fixed;
@@ -150,29 +141,27 @@ body {
     align-items: center;
 }
 
-/* Make modal larger */
 .modal-content {
     position: relative;
     background: white;
     padding: 20px;
     border-radius: 10px;
-    width: 90%; /* Increased width */
-    max-width: 1200px; /* Set a maximum width */
-    height: 90vh; /* Increased height */
-    max-height: 90vh; /* Ensure it fits within screen */
+    width: 90%; 
+    max-width: 1200px; 
+    height: 90vh; 
+    max-height: 90vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-/* Make sure certificates fit properly */
 .modal-preview {
     width: 100%;
     height: 100%;
     max-width: 1100px;
     max-height: 85vh;
-    object-fit: contain; /* Ensures proper scaling */
+    object-fit: contain; 
 }
 
 .modal-pdf {
@@ -181,7 +170,6 @@ body {
     border-radius: 10px;
 }
 
-/* Close Button */
 .close {
     position: absolute;
     top: 10px;
@@ -190,4 +178,31 @@ body {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.title {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.certificate-card {
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.modal-content {
+    animation: zoomIn 0.5s ease-in-out;
 }

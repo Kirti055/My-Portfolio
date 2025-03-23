@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
 
-    <!-- React and ReactDOM from CDN -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -23,7 +22,7 @@
         </ul>
     </div>
 
-    <div id="skills-root"></div>  <!-- React will render here -->
+    <div id="skills-root"></div> 
 
     <script type="text/babel">
         function Skills() {
@@ -41,9 +40,11 @@
             const softSkills = ["Communication", "Teamwork", "Problem-Solving", "Adaptability", "Time Management"];
 
             React.useEffect(() => {
-                document.querySelectorAll(".progress").forEach(bar => {
-                    bar.style.width = bar.dataset.width;
-                });
+                setTimeout(() => {
+                    document.querySelectorAll(".progress").forEach(bar => {
+                        bar.style.width = bar.dataset.width;
+                    });
+                }, 500);
             }, []);
 
             return (

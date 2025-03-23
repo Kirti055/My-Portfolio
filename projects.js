@@ -22,7 +22,6 @@ const projects = [
     }
 ];
 
-// Function to Load Projects Dynamically with a delay effect
 function loadProjects() {
     const container = document.getElementById("projects-container");
     projects.forEach((project, index) => {
@@ -31,13 +30,11 @@ function loadProjects() {
         projectCard.innerHTML = `<h3>${project.title}</h3><p>${project.description}</p>`;
         projectCard.onclick = () => openModal(index);
         container.appendChild(projectCard);
-        
-        // Add delay effect for each card
+
         projectCard.style.animationDelay = `${index * 0.2}s`;
     });
 }
 
-// Modal Functionality with smooth opening effect
 function openModal(index) {
     document.getElementById("modal-title").innerText = projects[index].title;
     document.getElementById("modal-description").innerText = projects[index].longDescription;
@@ -53,12 +50,10 @@ document.querySelector(".close").onclick = function() {
     document.getElementById("project-modal").style.display = "none";
 };
 
-// Close modal when clicking outside
 window.onclick = function(event) {
     if (event.target == document.getElementById("project-modal")) {
         document.getElementById("project-modal").style.display = "none";
     }
 };
 
-// Load projects with animation
 window.onload = loadProjects;

@@ -36,7 +36,7 @@ body {
 }
 
 .content h1 span {
-    color: rosybrown
+    color: rosybrown;
 }
 
 .image-container {
@@ -59,10 +59,10 @@ body {
 
 .resume-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100px; /* Adjust height as needed */
-    width: 100%; /* Ensure it spans full width */
+    justify-content: center; 
+    align-items: center; 
+    height: 100px; 
+    width: 100%;
     margin-top: -150px;
     margin-bottom: 20px;
 }
@@ -92,35 +92,6 @@ p {
     font-size: x-large;
     font-weight: 100;
     color: #3C2218;
-}
-
-.list-container {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:  #3C2218;
-}
-
-.list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0 20px;
-}
-
-.list li {
-    float: left;
-}
-  
-.list li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-  
-.list li a:hover {
-    background-color: #111;
 }
 
 .nav {
