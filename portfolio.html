@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
     
     <div class="hero-section">
         <div class="content">
-          <h1>HI, I AM<br><span>KIRTI ADHIKARI</span></h1>
+          <h1>HI, I AM <br><span id="typed-name"></span></h1>
+          <h2 id="typed-subtitle"></h2>
+          <p class="quote">"Strive not to be a success, but rather to be of value." – Albert Einstein</p>
         </div>
     </div>
 
@@ -29,8 +32,6 @@
         <a href="certificates.html" class="circle">Certificates</a>
     </div>
 
-    <br><br>
-    
     <footer>
         <div class="footer-content">
             <h3>Contact Me</h3>
@@ -46,6 +47,26 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var typedName = new Typed("#typed-name", {
+                strings: ["KIRTI ADHIKARI"],
+                typeSpeed: 100,
+                backSpeed: 50,
+                showCursor: false,
+                onComplete: function () {
+                    setTimeout(() => {
+                        var typedSubtitle = new Typed("#typed-subtitle", {
+                            strings: ["2nd year CSE Student| Web Developer"],
+                            typeSpeed: 100,
+                            showCursor: false
+                        });
+                    }, 500);
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

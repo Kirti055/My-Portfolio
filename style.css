@@ -4,6 +4,7 @@ body {
     background-color: #dbd2ab;
 }
 
+/* Hero Section */
 .hero-section {
     background: url('https://static.vecteezy.com/system/resources/previews/030/663/479/non_2x/brown-background-high-quality-free-photo.jpg') no-repeat center center/cover;
     height: 75vh; 
@@ -35,8 +36,25 @@ body {
     color: burlywood;
 }
 
-.content h1 span {
+.content h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
     color: rosybrown;
+}
+
+.quote {
+    font-size: 1.5rem;
+    color: #fff9d1;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 3s forwards 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .image-container {
@@ -83,25 +101,15 @@ body {
     background-color: #3C2218;
 }
 
-h1 {
-    color: #3C2218;
-}
-
-p {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
-    font-weight: 100;
-    color: #3C2218;
-}
-
 .nav {
     position: relative;
-    top: 50%;
+    top: 35%;
     left: 14%;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 40px;
+    margin-bottom: 50px;
 }
 
 .circle {
@@ -124,14 +132,6 @@ p {
     background-color: #BDAB98;
     transform: scale(1.1);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-button {
-    background-color: #5C3B2E;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
 }
 
 footer {
@@ -174,10 +174,4 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-footer .footer-bottom {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #ccc;
 }
