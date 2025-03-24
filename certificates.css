@@ -51,11 +51,15 @@ body {
     background-color: #111;
 }
 
-.title {
-    margin: 20px 0;
-    font-size: 32px;
-    font-weight: bold;
-    padding: 10px;
+.intro-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    animation: slideIn 1s ease-in-out;
 }
 
 .certificates-container {
@@ -178,7 +182,18 @@ body {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+    z-index: 1001;
 }
+
+.close:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
